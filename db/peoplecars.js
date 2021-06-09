@@ -12,22 +12,6 @@ const knex = require('knex')({
     }
 });
 
-// const groupByCategory = dbResults => {
-//     const people = [];
-//     dbResults.forEach(result => {
-//         let person = people.find(p => p.id === result.result.id[0]);
-//         if (!person) {
-//             person = { id: result.id[0], firstName: result.firstName, lastName: result.lastName, age: result.age, cars: [] };
-//             people.push(person);
-//         }
-//         if (result.personId != null) {
-//             person.cars.push({ id: result.id[1] });
-//         }
-//     });
-
-//     return people;
-// }
-
 const addPerson = async person => {
     await knex('people').insert(person);
 }
